@@ -49,7 +49,7 @@ function App() {
         </main>
 
         {/* BLACK FOOTER SLIDES OVER VIDEO */}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </ReactLenis>
   );

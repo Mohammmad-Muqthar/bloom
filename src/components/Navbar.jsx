@@ -26,6 +26,9 @@ function Navbar() {
         <a href="#contact">
           Contact
         </a>
+                <a href="#contact">
+          Contact
+        </a>
       </nav>
 
       <button

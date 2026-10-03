@@ -1,0 +1,1828 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  background: #000;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+
+  overflow-x: hidden;
+
+  background: #000;
+
+  color: #fff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =========================================================
+   LENIS
+========================================================= */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior:
+    auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SITE
+========================================================= */
+
+.site {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   FIXED BACKGROUND VIDEO
+========================================================= */
+
+.global-video-background {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 0;
+
+  width: 100vw;
+
+  height: 100vh;
+  height: 100svh;
+
+  overflow: hidden;
+
+  background: #000;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.global-bg-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position:
+    center center;
+
+  transform: none;
+
+  opacity: 0;
+
+  transition:
+    opacity
+    0.25s
+    ease;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  backface-visibility:
+    hidden;
+
+  -webkit-backface-visibility:
+    hidden;
+}
+
+
+.global-bg-video.video-ready {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   WHITE FOG
+========================================================= */
+
+.global-fog {
+  position: absolute;
+
+  z-index: 2;
+
+  left: -35vw;
+
+  width: 170vw;
+
+  height: 46vh;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter:
+    blur(80px);
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================================
+   FOG A
+========================================================= */
+
+.fog-a {
+  top: 8%;
+
+  opacity: 0.24;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.95
+      ) 0%,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.50
+      ) 28%,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.12
+      ) 58%,
+
+      transparent 78%
+    );
+
+  animation:
+    fogMoveA
+    22s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* =========================================================
+   FOG B
+========================================================= */
+
+.fog-b {
+  top: 41%;
+
+  opacity: 0.17;
+
+  background:
+    radial-gradient(
+      ellipse at 40% 50%,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.88
+      ) 0%,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.40
+      ) 31%,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.08
+      ) 62%,
+
+      transparent 80%
+    );
+
+  animation:
+    fogMoveB
+    29s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* =========================================================
+   FOG C
+========================================================= */
+
+.fog-c {
+  bottom: -12%;
+
+  opacity: 0.27;
+
+  filter:
+    blur(100px);
+
+  background:
+    radial-gradient(
+      ellipse at 60% center,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.96
+      ) 0%,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.44
+      ) 34%,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.08
+      ) 64%,
+
+      transparent 82%
+    );
+
+  animation:
+    fogMoveC
+    35s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+
+/* =========================================================
+   FOG MOVEMENT
+========================================================= */
+
+@keyframes fogMoveA {
+
+  0% {
+    transform:
+      translate3d(
+        -8%,
+        0,
+        0
+      )
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        4%,
+        -15px,
+        0
+      )
+      scale(1.06);
+  }
+
+  100% {
+    transform:
+      translate3d(
+        13%,
+        10px,
+        0
+      )
+      scale(1.02);
+  }
+}
+
+
+@keyframes fogMoveB {
+
+  0% {
+    transform:
+      translate3d(
+        10%,
+        10px,
+        0
+      )
+      scale(1.06);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        -4%,
+        -18px,
+        0
+      )
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translate3d(
+        -15%,
+        12px,
+        0
+      )
+      scale(1.08);
+  }
+}
+
+
+@keyframes fogMoveC {
+
+  0% {
+    transform:
+      translate3d(
+        -5%,
+        15px,
+        0
+      )
+      scale(1.08);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        7%,
+        -8px,
+        0
+      )
+      scale(1);
+  }
+
+  100% {
+    transform:
+      translate3d(
+        15%,
+        5px,
+        0
+      )
+      scale(1.06);
+  }
+}
+
+
+/* =========================================================
+   VIDEO JOURNEY
+
+   EXACTLY THREE SCREENS
+
+   HERO
+   ↓
+   ABOUT
+   ↓
+   PROJECTS
+
+   No spacer.
+   No extra scroll section.
+========================================================= */
+
+.video-journey {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 100;
+
+  width: 100%;
+
+  height: 88px;
+
+  padding:
+    0
+    5vw;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  background: transparent;
+
+  color: #fff;
+}
+
+
+.navbar-logo {
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.1em;
+
+  color: #fff;
+}
+
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 38px;
+}
+
+
+.navbar-links a {
+  position: relative;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: #fff;
+}
+
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -6px;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: #fff;
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    right;
+
+  transition:
+    transform
+    0.35s
+    ease;
+}
+
+
+.navbar-links a:hover::after {
+  transform:
+    scaleX(1);
+
+  transform-origin:
+    left;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.menu-button {
+  display: none;
+
+  width: 40px;
+
+  height: 40px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+
+.menu-button span {
+  display: block;
+
+  width: 25px;
+
+  height: 1px;
+
+  margin:
+    6px
+    auto;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   ALL THREE SECTIONS
+
+   SAME HEIGHT.
+   SAME RHYTHM.
+========================================================= */
+
+.hero,
+.about,
+.projects {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  height: 100vh;
+  height: 100svh;
+
+  margin: 0;
+
+  background: transparent;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+.hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width:
+    min(
+      1500px,
+      92vw
+    );
+
+  padding:
+    0
+    30px;
+
+  text-align: center;
+}
+
+
+.hero-label {
+  margin:
+    0
+    0
+    26px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.30em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.78
+    );
+}
+
+
+.hero-content h1 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      72px,
+      10.5vw,
+      180px
+    );
+
+  line-height: 0.84;
+
+  font-weight: 400;
+
+  letter-spacing:
+    -0.07em;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   HERO SCROLL
+========================================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 35px;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.22em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+}
+
+
+.hero-scroll-line {
+  display: block;
+
+  width: 38px;
+
+  height: 1px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.75
+    );
+}
+
+
+/* =========================================================
+   COMMON SECTION LABEL
+========================================================= */
+
+.section-label {
+  margin:
+    0
+    0
+    28px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.25em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.70
+    );
+}
+
+
+/* =========================================================
+   SMALL LABEL
+========================================================= */
+
+.section-small {
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.68
+    );
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+  padding:
+    110px
+    6vw
+    65px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    space-between;
+
+  overflow: hidden;
+}
+
+
+.about::before,
+.about::after {
+  display: none;
+}
+
+
+.about-top {
+  width: 100%;
+}
+
+
+/* =========================================================
+   ABOUT HEADING
+========================================================= */
+
+.about h2 {
+  margin: 0;
+
+  max-width: 1300px;
+
+  font-size:
+    clamp(
+      52px,
+      7vw,
+      120px
+    );
+
+  line-height: 0.90;
+
+  letter-spacing:
+    -0.06em;
+
+  font-weight: 400;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   ABOUT BOTTOM
+========================================================= */
+
+.about-bottom {
+  width: 100%;
+
+  padding-top: 28px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 60px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+}
+
+
+.about-copy {
+  width:
+    min(
+      520px,
+      100%
+    );
+
+  margin-left: auto;
+}
+
+
+.about-copy p {
+  margin:
+    0
+    0
+    18px;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.90
+    );
+}
+
+
+/* =========================================================
+   PROJECTS
+
+   IMPORTANT:
+
+   EXACTLY 100vh.
+
+   NO STICKY.
+   NO 220vh.
+   NO EMPTY END.
+
+   At maximum page scroll,
+   Projects fills the whole viewport.
+========================================================= */
+
+.projects {
+  padding:
+    110px
+    6vw
+    65px;
+
+  overflow: hidden;
+}
+
+
+.projects::before,
+.projects::after {
+  display: none;
+}
+
+
+/* =========================================================
+   PROJECTS INNER
+========================================================= */
+
+.projects-inner {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    space-between;
+}
+
+
+.projects-top {
+  width: 100%;
+}
+
+
+/* =========================================================
+   PROJECT HEADING
+========================================================= */
+
+.projects h2 {
+  margin: 0;
+
+  max-width: 1300px;
+
+  font-size:
+    clamp(
+      52px,
+      7vw,
+      120px
+    );
+
+  line-height: 0.90;
+
+  letter-spacing:
+    -0.06em;
+
+  font-weight: 400;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   PROJECT BOTTOM
+========================================================= */
+
+.projects-bottom {
+  width: 100%;
+
+  padding-top: 28px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 60px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+}
+
+
+.projects-bottom p {
+  width:
+    min(
+      520px,
+      100%
+    );
+
+  margin:
+    0
+    0
+    0
+    auto;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.90
+    );
+}
+
+
+/* =========================================================
+   ABSOLUTELY NO SPACE AFTER PROJECTS
+========================================================= */
+
+.projects:last-child {
+  margin-bottom: 0;
+}
+
+
+.video-journey > :last-child {
+  margin-bottom: 0;
+}
+
+
+#root {
+  padding-bottom: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    height: 76px;
+
+    padding:
+      0
+      28px;
+  }
+
+
+  .navbar-links {
+    display: none;
+  }
+
+
+  .menu-button {
+    display: block;
+  }
+
+
+  .hero-content h1 {
+    font-size:
+      clamp(
+        65px,
+        15vw,
+        125px
+      );
+  }
+
+
+  .about,
+  .projects {
+    padding:
+      95px
+      35px
+      55px;
+  }
+
+
+  .about h2,
+  .projects h2 {
+    font-size:
+      clamp(
+        50px,
+        10vw,
+        90px
+      );
+  }
+
+
+  .about-bottom,
+  .projects-bottom {
+    grid-template-columns:
+      1fr;
+
+    gap: 20px;
+  }
+
+
+  .about-copy,
+  .projects-bottom p {
+    margin-left: 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  /* VIDEO */
+
+  .global-bg-video {
+    object-fit: cover;
+
+    object-position:
+      center center;
+  }
+
+
+  /* FOG */
+
+  .global-fog {
+    width: 230vw;
+
+    left: -65vw;
+  }
+
+
+  .fog-a {
+    top: 13%;
+  }
+
+
+  .fog-b {
+    top: 44%;
+  }
+
+
+  /* NAVBAR */
+
+  .navbar {
+    height: 70px;
+
+    padding:
+      0
+      20px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    height: 100svh;
+  }
+
+
+  .hero-content {
+    width: 100%;
+
+    padding:
+      0
+      20px;
+  }
+
+
+  .hero-label {
+    margin-bottom: 18px;
+
+    font-size: 9px;
+
+    letter-spacing:
+      0.24em;
+  }
+
+
+  .hero-content h1 {
+    font-size:
+      clamp(
+        54px,
+        18vw,
+        90px
+      );
+
+    line-height:
+      0.86;
+  }
+
+
+  .hero-scroll {
+    bottom: 24px;
+
+    font-size: 8px;
+
+    letter-spacing:
+      0.18em;
+  }
+
+
+  /* ABOUT + PROJECTS */
+
+  .about,
+  .projects {
+    height: 100svh;
+
+    padding:
+      88px
+      22px
+      42px;
+  }
+
+
+  .section-label {
+    margin-bottom: 22px;
+  }
+
+
+  .about h2,
+  .projects h2 {
+    font-size:
+      clamp(
+        44px,
+        13vw,
+        70px
+      );
+
+    line-height:
+      0.92;
+  }
+
+
+  .about-bottom,
+  .projects-bottom {
+    padding-top: 20px;
+
+    grid-template-columns:
+      1fr;
+
+    gap: 14px;
+  }
+
+
+  .about-copy {
+    margin-left: 0;
+  }
+
+
+  .about-copy p,
+  .projects-bottom p {
+    margin-left: 0;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .fog-a,
+  .fog-b,
+  .fog-c {
+    animation: none;
+  }
+}
+/* =========================================================
+   FOOTER REVEAL AREA
+
+   THIS CONTROLS THE SLIDE SPEED.
+
+   Bigger height = slower footer slide.
+
+   220vh gives a long smooth cinematic reveal.
+========================================================= */
+
+.footer-reveal {
+  position: relative;
+
+  z-index: 60;
+
+  width: 100%;
+
+  height: 220vh;
+
+  /*
+    Transparent because Projects + final
+    video frame should remain behind while
+    footer begins sliding upward.
+  */
+  background: transparent;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FOOTER
+
+   Fixed to viewport.
+
+   GSAP moves this from:
+
+   translateY(100%)
+          ↓
+   translateY(0%)
+
+   across the 220vh reveal distance.
+========================================================= */
+
+.footer {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 60;
+
+  width: 100vw;
+
+  height: 100vh;
+  height: 100svh;
+
+  padding:
+    110px
+    5vw
+    38px;
+
+  background: #050505;
+
+  color: #fff;
+
+  /*
+    GSAP controls transform.
+  */
+  transform:
+    translate3d(
+      0,
+      100%,
+      0
+    );
+
+  will-change: transform;
+
+  pointer-events: auto;
+
+  overflow: hidden;
+
+  box-shadow:
+    0
+    -30px
+    90px
+    rgba(
+      0,
+      0,
+      0,
+      0.28
+    );
+}
+
+
+/* =========================================================
+   FOOTER INNER
+========================================================= */
+
+.footer-inner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    space-between;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================================
+   FOOTER TOP
+========================================================= */
+
+.footer-top {
+  width: 100%;
+}
+
+
+.footer-label {
+  margin:
+    0
+    0
+    32px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.28em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.48
+    );
+}
+
+
+/* =========================================================
+   FOOTER LARGE HEADING
+========================================================= */
+
+.footer h2 {
+  margin: 0;
+
+  max-width: 1400px;
+
+  font-size:
+    clamp(
+      68px,
+      9vw,
+      165px
+    );
+
+  line-height: 0.84;
+
+  letter-spacing:
+    -0.07em;
+
+  font-weight: 400;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   FOOTER MIDDLE
+========================================================= */
+
+.footer-middle {
+  margin:
+    auto
+    0;
+
+  padding:
+    45px
+    0;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.footer-email {
+  position: relative;
+
+  display: inline-block;
+
+  font-size:
+    clamp(
+      24px,
+      2.8vw,
+      46px
+    );
+
+  font-weight: 400;
+
+  color: #fff;
+}
+
+
+.footer-email::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -8px;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: #fff;
+
+  transform:
+    scaleX(1);
+
+  transform-origin: left;
+
+  transition:
+    transform
+    0.4s
+    ease;
+}
+
+
+.footer-email:hover::after {
+  transform:
+    scaleX(0);
+
+  transform-origin: right;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  width: 100%;
+
+  padding-top: 28px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  align-items: end;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+  font-size: 18px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.footer-links {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+.footer-links a {
+  position: relative;
+
+  font-size: 12px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.62
+    );
+
+  transition:
+    color
+    0.3s
+    ease;
+}
+
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.footer-copy {
+  text-align: right;
+
+  font-size: 11px;
+
+  letter-spacing:
+    0.08em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  /*
+    Still long enough to keep
+    slow footer motion.
+  */
+
+  .footer-reveal {
+    height: 200vh;
+  }
+
+
+  .footer {
+    padding:
+      95px
+      35px
+      35px;
+  }
+
+
+  .footer h2 {
+    font-size:
+      clamp(
+        62px,
+        13vw,
+        120px
+      );
+  }
+
+
+  .footer-bottom {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 24px;
+  }
+
+
+  .footer-links {
+    justify-content:
+      flex-end;
+  }
+
+
+  .footer-copy {
+    grid-column:
+      1 / -1;
+
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  /*
+    Slower footer reveal on mobile too.
+  */
+
+  .footer-reveal {
+    height: 180vh;
+  }
+
+
+  .footer {
+    padding:
+      88px
+      22px
+      28px;
+  }
+
+
+  .footer-label {
+    margin-bottom:
+      24px;
+  }
+
+
+  .footer h2 {
+    font-size:
+      clamp(
+        52px,
+        16vw,
+        84px
+      );
+
+    line-height:
+      0.88;
+  }
+
+
+  .footer-middle {
+    padding:
+      35px
+      0;
+  }
+
+
+  .footer-bottom {
+    grid-template-columns:
+      1fr;
+
+    align-items:
+      start;
+
+    gap: 20px;
+  }
+
+
+  .footer-links {
+    justify-content:
+      flex-start;
+
+    flex-wrap: wrap;
+  }
+
+
+  .footer-copy {
+    text-align: left;
+  }
+
+}

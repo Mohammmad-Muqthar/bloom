@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+
+  min-height: 100%;
+
+  overflow-x: hidden;
+
+  background: #d8e4e8;
+}
+
+
+body {
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+}
+
+
+.experience {
+
+  position: relative;
+
+  width: 100%;
+
+  /*
+    Long scroll gives the
+    mountain → cloud transition
+    enough space.
+  */
+
+  height: 550vh;
+}
+
+
+.cinematic-sticky {
+
+  position: sticky;
+
+  top: 0;
+
+  width: 100%;
+
+  height: 100vh;
+
+  height: 100dvh;
+
+  overflow: hidden;
+}
